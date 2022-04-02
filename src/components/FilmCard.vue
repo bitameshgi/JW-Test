@@ -21,7 +21,7 @@
       </v-col>
       <v-col cols="6" class="my-2" style="position: relative;padding-left:0;">
         <!-- <v-list-item-content> -->
-        <router-link to="/CardDetail"  class="card-title">{{
+        <router-link :to="{name:'CardDetail' ,params:{id:filmItem.id} }"  class="card-title">{{
           filmItem.title
         }}</router-link>
         <div class="film-card-details">

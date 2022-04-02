@@ -3,31 +3,31 @@
     <v-row>
       <v-col cols="4">
         <v-img
-          src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg"
+          :src="baseUrl+items.backdrop_path"
           style="width: 90%; height: 100%"
           class="details-image"
         ></v-img>
       </v-col>
-      <v-col cols="8" style="padding: 50px 20px;">
+      <v-col cols="8" style="padding: 50px 20px">
         <div class="d-flex">
           <p class="film-title">Budget</p>
           <v-spacer></v-spacer>
-          <p class="film-text">$170'000'000</p>
+          <p class="film-text">{{items.budget}}</p>
         </div>
         <div class="d-flex">
           <p class="film-title">Revenue</p>
           <v-spacer></v-spacer>
-          <p class="film-text">$772'776'600</p>
+          <p class="film-text">{{items.revenue}}</p>
         </div>
         <div class="d-flex">
           <p class="film-title">Release Date</p>
           <v-spacer></v-spacer>
-          <p class="film-text">2014-07-30</p>
+          <p class="film-text">{{items.release_date}}</p>
         </div>
         <div class="d-flex">
           <p class="film-title">Runtime</p>
           <v-spacer></v-spacer>
-          <p class="film-text">2h 1m</p>
+          <p class="film-text">{{items.runtime}}</p>
         </div>
         <div class="d-flex">
           <p class="film-title">Score</p>
@@ -64,7 +64,39 @@
   </v-container>
 </template>
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      items: [],
+         baseUrl:'https://image.tmdb.org/t/p/w500/'
+    };
+  },
+  props: ["id"],
+  mounted() {this.addRequest();},
+  methods: {
+    addRequest() {
+      const id = this.$route.params.id;
+      const URL =
+        "https://api.themoviedb.org/3/movie/" +
+        id +
+        "?api_key=f62f750b70a8ef11dad44670cfb6aa57";
+      axios.get(URL).then((response) => {
+         this.items = response.data;
+        // const data = response.data;
+       
+        // console.log(Response.data);
+            console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          this.loading = false;
+       
+       
+      });
+    },
+  },
+};
 </script>
 <style scoped>
 </style>
