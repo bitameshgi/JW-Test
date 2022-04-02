@@ -1,0 +1,190 @@
+.film-title {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .film-text {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #5f5f5f;
+  }
+  .film-description{
+      padding: 38px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+  }
+  .Credit p{
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-left: 18px;
+      margin-top: 40px;
+      margin-bottom: 5px;
+  }
+  .Credit span{
+      margin-left: 18px;
+      font-weight: 500;
+      color: #686666;
+      font-size: 0.9rem;
+     
+  }
+  .search-box{
+    background-color:#e2e2e2; 
+    margin: 30px;
+    display: flex;
+    
+  }
+  a.back-btn{
+  text-decoration: none;
+  
+  }
+  .back-btn{
+      text-transform:none;
+    
+  }
+  .search-btn{
+        padding: 20px;
+  }
+  .card-text{
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+      
+  }
+  .card-text2{
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 0;
+  }
+  .card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: black;
+  }
+  a.card-title {
+    text-decoration: none;
+    color: black !important;
+  }
+  .film-image.theme--light {
+    border-bottom-left-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+    margin: 2px !important;
+  }
+  .v-list-item.theme--light {
+    background-color: #f1f1f1;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  .film-card-details {
+    position: absolute;
+    bottom: 12px;
+  }
+  
+  .date span {
+    color: #6c6c6c;
+    font-size: 0.8rem;
+  }
+  
+  .movie-list {
+    display: inline-flex;
+  }
+  .movie-list li {
+    color: #6c6c6c;
+    font-size: 0.8rem;
+  }
+  .movie-list:first-child {
+    list-style-type: unset !important;
+  }
+  .movie-list {
+    max-width: 140px;
+  }
+  .v-list-item__content {
+    height: 100%;
+  }
+  .film-card {
+    padding: 0 !important;
+    margin-top: 39px;
+  }
+  .v-card {
+      border: 1px solid #bdbdbd !important;
+      border-radius: 12px !important;
+  }
+  .v-btn--is-elevated{
+    box-shadow: none;
+}
+.theme--light.v-btn.v-btn--has-bg{
+    background-color: #11b980 !important;
+}
+header.hidden-xs-and-down.v-sheet.theme--light.v-toolbar{
+        background-color: #11b980;
+}
+.v-sheet.v-toolbar:not(.v-sheet--outlined){
+    box-shadow: none;
+}
+.text-white{
+    color: white;
+    font-weight: bold;
+}
+.btn_content{
+    color: white !important;
+}
+.v-btn:not(.v-btn--round).v-size--default {
+    text-transform: none;
+  }
+  .search-box {
+    background-color: #e2e2e2;
+    margin: 30px 0px;
+  }
+  .search-btn {
+    text-align: end;
+  
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .box-items {
+    display: flex !important;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+  }
+  .container{
+      padding: 0;
+  }
+  .details-image{
+      border-radius: 12px;
+  }
+  .v-input__slot{
+      box-shadow: none !important;
+  }
+a.forget-pass{
+text-decoration: none;
+color: #4caf50  !important;
+}
+.forget-pass{
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+.card-footer{
+margin-top: 15px;
+color: #7d7979;
+}
+a.signup-text{
+  text-decoration: none;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination-button {
+  padding: 16px !important;
+  color: #318fe7;
+  font-weight: 500;
+}
+.pagination-button:disabled {
+  color: #858585;
+}
+.pagination-count {
+  text-align: center;
+  color: #949494;
+}
+.pagination-area {
+  text-align: center;
+  padding: 50px;
+}
