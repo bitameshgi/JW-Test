@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import CardDetail from '../views/CardDetail.vue'
-import SignIn from '../views/SignIn.vue'
-import SignUp from '../views/SignUp.vue'
+import HomeView from '../views/HomePageView.vue'
+import CardDetail from '../views/MovieDetailsView.vue'
+import SignIn from '../views/SignInView.vue'
+import SignUp from '../views/SignUpView.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,7 +17,7 @@ const routes = [
     name: 'CardDetail',
     component: CardDetail
   },
-  
+
   {
     path: '/signin',
     name: 'SignIn',
@@ -28,7 +28,7 @@ const routes = [
     name: 'SignUp',
     component: SignUp
   },
-  
+
 ]
 
 const router = new VueRouter({

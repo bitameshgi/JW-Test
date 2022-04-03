@@ -1,15 +1,16 @@
 <template>
-  <div class="pagination-area">
+  <div class="pagination-area" :visible="countTxt!==''">
     <div class="pagination">
       <button
-        class="pagination-button"
-        @click="processPrev()"
-        :disabled="isPrevDisabled"
+          class="pagination-button"
+          @click="processPrev()"
+          v-model="currentPage"
+          :disabled="currentPage === 1"
       >
-        Pervious Page
+        Previous Page
       </button>
       <span
-        style="
+          style="
           width: 1px;
           height: 50px;
           display: inline-block;
@@ -17,38 +18,39 @@
         "
       />
       <button
-        class="pagination-button"
-        @click="processNext()"
-        :disabled="isNextDisabeled"
+          class="pagination-button"
+          @click="processNext()"
+          :disabled="this.totalPages <= 1"
       >
         Next Page
       </button>
     </div>
-    <span class="pagination-count" ref="count"></span>
+    <span class="pagination-count" ref="count">Showing results {{countTxt}} </span>
   </div>
 </template>
 <script>
+import {mapState} from "vuex";
+
 export default {
   data() {
     return {
       isPrevDisabled: true,
-      isNextDisabeled: true,
-      count: "",
+      isNextDisabled: true,
     };
   },
+  computed:{
+    ...mapState({
+      currentPage: state => state.currentPage,
+      totalPages: state => state.totalPages,
+      countTxt: state => state.countTxt
+    }),
+  },
   methods: {
-    processTotalPages(current, total, count) {
-      this.isNextDisabeled = total <= 1;
-      this.isPrevDisabled = current == 1;
-
-      count = (current - 1) * count + 1 + "-" + current * count;
-      this.$refs.count.innerHTML = "Showing results " + count;
-    },
     processNext() {
-      this.$parent.$refs.filmCards.goToNextPage();
+      this.$parent.goToNextPage();
     },
     processPrev() {
-      this.$parent.$refs.filmCards.goToLastPage();
+      this.$parent.goToLastPage();
     },
   },
 };
